@@ -18,7 +18,8 @@ def is_odd(a_number):
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+    return a_number % 2 != 0 True
+
 
 
 def fix_it(moves=True, should_move=True):
@@ -245,6 +246,7 @@ if __name__ == "__main__":
     # code is robust to the situations that you'll see in action.
     try:
         from helper import little_printer, minitest
+
         minitest(is_odd, [1], True)
         minitest(is_odd, [4], False)
         minitest(fix_it, [True, True], "No Problem")
@@ -262,6 +264,9 @@ if __name__ == "__main__":
         little_printer(loops_6(), "loops_6")
         little_printer(loops_7(), "loops_7")
     except ModuleNotFoundError as e:
-        print("⚠"*20, "\nWe're looking for a module that's missing. That's probably a problem that a tutor needs to figure out.\n")
+        print(
+            "⚠" * 20,
+            "\nWe're looking for a module that's missing. That's probably a problem that a tutor needs to figure out.\n",
+        )
         print(e)
-        print("⚠"*20)
+        print("⚠" * 20)
