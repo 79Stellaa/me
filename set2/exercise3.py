@@ -103,6 +103,7 @@ def loops_2_preview():
             ['💩', '💩', '💩', '💩'],
           ]
     """
+
     field = []
     for i in range(4):
         row = []
@@ -132,8 +133,8 @@ def loops_2():
     """
     star_square = []
     for j in range(10):
-        star_square.append(loops_1c(number_of_items=10, symbol="#"))
-
+        row = ["*"] * 10
+        star_square.append(row)
     return star_square
 
 
