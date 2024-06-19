@@ -223,7 +223,14 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append(("(i{0},j{1})").format(i, j))
+        number_square.append(coordinates_row)
+
+    return number_square
 
 
 def loops_6():
@@ -246,7 +253,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    the_wedge = []
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(j)
+        the_wedge.append(row)
+    return the_wedge
 
 
 def loops_7():
@@ -270,7 +283,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    columns = []
+    for x in range(5):
+        rows = []
+        for y in range(9):
+            if abs(y - 4) <= x:
+                rows.append("*")
+            else:
+                rows.append(" ")
+        columns.append(rows)
+
+    print(columns)
+    return columns
 
 
 if __name__ == "__main__":
