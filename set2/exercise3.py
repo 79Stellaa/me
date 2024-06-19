@@ -39,11 +39,11 @@ def fix_it(moves=True, should_move=True):
     if moves and should_move:
         return "No Problem"
     elif moves and not should_move:
-        return "WD-40"
+        return "Duct Tape"
     elif not moves and not should_move:
         return "No Problem"
     elif not moves and should_move:
-        return "Duct Tape"
+        return "WD-40"
     else:
         return "something is not right here mates, looks expensive "
 
@@ -85,10 +85,12 @@ def loops_1c(number_of_items=5, symbol="#"):
     Remember that you're being passed arguments here. Don't hard code the number
     or the symbol, let it be whatever it wants to be.
     """
-    my_list = []
-    for i in range(5):
-        my_list.append("#")
-    return my_list
+    result_list = []
+    for i in range(number_of_items):
+        result_list.append(symbol)
+
+    print(result_list)
+    return result_list
 
 
 def loops_2_preview():
@@ -212,7 +214,7 @@ def loops_5():
       ["(i7, j0)", "(i7, j1)", "(i7, j2)", "(i7, j3)", "(i7, j4)"],
       ["(i8, j0)", "(i8, j1)", "(i8, j2)", "(i8, j3)", "(i8, j4)"],
       ["(i9, j0)", "(i9, j1)", "(i9, j2)", "(i9, j3)", "(i9, j4)"]
-    ]
+    ]  '(i5, j1)',
 
     TIP:
     If you've got num_bottles, e.g. num_bottles = 8
@@ -224,14 +226,13 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    number_square = []
+    field = []
     for i in range(10):
-        coordinates_row = []
+        row = []
         for j in range(5):
-            coordinates_row.append(("(i{0},j{1})").format(i, j))
-        number_square.append(coordinates_row)
-
-    return number_square
+            row.append(f"(i{i}, j{j})")
+        field.append(row)
+    return field
 
 
 def loops_6():
@@ -254,13 +255,11 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    the_wedge = []
+    wedge = []
     for i in range(10):
-        row = []
-        for j in range(i + 1):
-            row.append(j)
-        the_wedge.append(row)
-    return the_wedge
+        row = [str(j) for j in range(i + 1)]
+        wedge.append(row)
+    return wedge
 
 
 def loops_7():
