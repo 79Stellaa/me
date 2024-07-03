@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week I don't have more time to do set5, because I still doing week4 and correcting the mistakes from week 3. I ask chatgpt and it give me the wrong answer. I remember one mistake is I miss one blank. This is hard to find because there are a lot of numbers. To do this I need to be more careful.
