@@ -17,12 +17,12 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-    new_list = []
+    my_range= []
 
     for i in range(start, stop, step):
-        new_list.append(i)
+        my_range.append(i)
 
-    return new_list
+    return my_range
 
 
 def two_step_ranger(start, stop):
@@ -45,6 +45,8 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
+    message = "Give me a number between {low}, and {high}: ".format(low=low,high=high)
+    
     while True:
         val = input(f"please enter a number between {low} and {high}: ")
         num = int(val)
@@ -64,14 +66,19 @@ def not_number_rejector(message):
     message = "Give me a number:"
 
     while True:
-        Try
-        input_number = int(raw_input(message))
-        print("Thanks!{}looks good.".format(input_number))
-        return input_number
-    Exception
-    print("err, you wot, try again({})".format(e))
+        try:
+            input_number = int(input(message))
+            print("Thanks! {} looks good.".format(input_number))
+            return input_number
+        except Exception as e:
+            print("Err, you wot, try again ({}).".format(e))
 
-    return
+
+        
+
+
+    
+
 
 
 def super_asker(low, high):
@@ -95,6 +102,6 @@ if __name__ == "__main__":
     print("\nstubborn_asker")
     stubborn_asker(30, 45)
     print("\nnot_number_rejector")
-    not_number_rejector("Enter a number: ")
+    not_number_rejector("Give me a number:")
     print("\nsuper_asker")
     super_asker(33, 42)
