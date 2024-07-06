@@ -33,8 +33,21 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
+    my_range= []
 
-    return range(start, stop, 2)
+    for i in range(start, stop, 2):
+        my_range.append(i)
+    
+
+    return my_range
+    result1 = two_step_ranger(0, 10)
+    print(result1)  # Expected output: [0, 2, 4, 6, 8, 10]
+    result2 = two_step_ranger(100, 104)
+    print(result2)  # Expected output: [100, 102]
+
+
+    
+    
 
 
 def stubborn_asker(low, high):
@@ -87,7 +100,19 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+
+    while True:
+        try:
+            input_number = int(input(f"Give me a number between {low} and {high}: "))
+            if low <= input_number <= high:
+                print(f"Thanks! {input_number} looks good.")
+                return input_number
+            else:
+                print(f"The number {input_number} is not between {low} and {high}, try again.")
+        except ValueError as e:
+            print(f"That's not a valid number, try again. ({e})")
+   
+    super_asker(10, 20)
 
 
 if __name__ == "__main__":

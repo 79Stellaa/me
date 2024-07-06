@@ -1,2 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-Chatgpt always wrong, I think I can't depend on it.
+ The new point of using while, try, except. The “//” represents integer division, and the decimal part of the result will be discarded, retaining only the integer part, and “/” is floating-point division, which retains the decimal part. To make sure your code is correct, run a few test cases.
