@@ -9,7 +9,7 @@ Using file IO, from the docs:
     to the file is automatically added to the end. 'r+' opens the file for
     both reading and writing. The mode argument is optional; 'r' will be
     assumed if it's omitted."
-https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+https://docs.python.org/ 3/tutorial/inputoutput.html#reading-and-writing-files
 
 """
 
@@ -92,7 +92,7 @@ message_for_capsule = {
     "Fact": "It would take 1,200,000 mosquitoes, each "
     + "sucking once, to completely drain the "
     + "average human of blood",
-    "Alphabet Inc Class A": "1106.50USD",
+    "Alphabet Inc Class A": "1106.50USD", 
     "fruit": ["apple", "apricot", "avocado", "abiu"],
 }
 
