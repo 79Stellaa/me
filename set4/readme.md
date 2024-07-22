@@ -20,10 +20,6 @@ json.loads(): Convert a JSON string back to a Python object.
 json.dump(): Convert a Python object to a JSON string and write it to a file.
 json.load(): Read JSON data from a file and convert it to a Python object.
 
-try and except : Used for exception handling to ensure that the program does not crash when encountering an error.
-while : Used to repeatedly execute a block of code while a condition is True.
-for : Used to iterate over each element in a sequence.
-if : Used to execute different blocks of code based on a condition.
 
 open()，write(): two functions that accept different parameters in their parentheses.
 The open() function is used to open a file. The following parameters can be included in the brackets:

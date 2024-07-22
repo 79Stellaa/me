@@ -6,7 +6,12 @@ git pull                           # pulls the latest code down
 pip install -r .\requirements.txt  # Installs the latest python modules
 cd ..\me                           # puts you back into your me directory
 
-Boolean-answer to a logical question(true or false)
+Boolean-answer to a logical question(true or false)     such as if 69 < 88:  
+                                                                    print("well") 
+                                                                elif...:                   (another possible)
+                                                                    print...
+                                                                else:                      (something not true)
+                                                                    ...
 String-text, or things to be treated as text("hello world" or "450")
 
 There should be a space before and after assignment operators, arithmetic operators, comparison operators, and logical operators. 
@@ -43,7 +48,10 @@ Purpose:               Immutable data set             Mutable data set          
                                  greeting = f"Hello, {name}!"
 
 
-
+When a string contains single quotes, you can use double quotes to surround the string.
+string1 = "I'm learning Python"
+When a string contains double quotes, you can use single quotes to surround the string.
+string2 = 'He said, "Hello!"'
 
 
 range(5) is from 0 to 4
