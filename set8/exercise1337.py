@@ -145,16 +145,6 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that returns True if the value is 5
     TIP: you've already written a function that subtracts 5
     """
-def is_it_5(some_number) -> bool:
-    """Returns True if the argument passed is 5, otherwise returns False."""
-    return some_number == 5
-
-def take_five(some_number) -> int:
-    """Subtracts 5 from some_number and returns the result."""
-    return some_number - 5
-
-def the_chain_gang_5(the_value) -> bool:
-    """Take the_value, subtract 5 from it, and return True if the value we end up with is 5."""
     result = take_five(the_value)
     return is_it_5(result)
    
@@ -229,12 +219,17 @@ def make_filler_text_dictionary() -> dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-    for length in range(3, 8):  
-        response = requests.get(url + str(length))
-        words = response.text.split()  
-        wd[length] = words[:4]  
+
+    for length in range(3, 8):
+        words = [ ]
+        for _ in range(4):
+            response = requests.get(url+ str(length))
+            if response.status_code == 200:
+                words.append(response.text)
+        wd[length] = words
 
     return wd
+
 
 
 def random_filler_text(number_of_words=200) -> str:
@@ -247,17 +242,20 @@ def random_filler_text(number_of_words=200) -> str:
     TIP: you'll need the random library,
         e.g. random.randint(low, high)
     """
-
+    
     my_dict = make_filler_text_dictionary()
-
+    
     words = []
     for _ in range(number_of_words):
-        length = random.randint(3, 7)  
-        if my_dict[length]:  
-            word = random.choice(my_dict[length])  
-            words.append(word)
+        length = random.choice(list(my_dict.keys()))
+        word = random.choice(my_dict[length])
+        words.append(word)
 
-    return " ".join(words)
+    paragraph = " ".join(words)
+
+    return paragraph.capitalize() + "."
+
+
 
 
 def fast_filler(number_of_words=200) -> str:

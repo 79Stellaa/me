@@ -360,7 +360,7 @@
   "7",
   {
     "of_total": 38,
-    "mark": 33,
+    "mark": 36,
     "results": [
       {
         "value": 1,
@@ -463,11 +463,11 @@
         "name": "\nthe_chain_gang_5:\n    given:    11\n    expected: False\n    got:      False"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "\ud83e\uddb9\u200d\u2640\ufe0f\u26d3\ufe0f\ud83e\uddb9\u200d\u2640\ufe0f\u26d3\ufe0f\ud83e\uddb9\u200d\u2640\ufe0f check that the_chain_gang_5 doesn't use =="
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "\ud83e\uddb9\u200d\u2640\ufe0f\u26d3\ufe0f\ud83e\uddb9\u200d\u2640\ufe0f\u26d3\ufe0f\ud83e\uddb9\u200d\u2640\ufe0f check that the_chain_gang_5 doesn't use -"
       },
       {
@@ -487,8 +487,8 @@
         "name": "\nbest_letter_for_pets:\n    given:    * no args *\n    expected: e\n    got:      e"
       },
       {
-        "value": 0,
-        "name": "\nmake_filler_text_dictionary:\n    given:    * no args *\n    expected: [[3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6], [7, 7, 7, 7]]\n    got:      [[3], [4], [5], [6], [7]]"
+        "value": 1,
+        "name": "\nmake_filler_text_dictionary:\n    given:    * no args *\n    expected: [[3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6], [7, 7, 7, 7]]\n    got:      [[3, 3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6], [7, 7, 7, 7]]"
       },
       {
         "value": 1,
