@@ -274,6 +274,18 @@ def fast_filler(number_of_words=200) -> str:
     If you get this one to work, you are a Very Good Programmer™!
     """
 
+    def make_filler_text_dictionary() -> Dict[int, List[str]]:
+     """Generates a filler text dictionary."""
+    return {
+        3: ["fox", "dog", "cat"],
+        4: ["jumps", "sleeps", "runs"],
+        5: ["quickly", "slowly", "lazily"],
+        6: ["over the fence", "under the tree", "through the park"],
+        7: ["over the lazy dog", "under the bright sun", "through the dense forest"]
+    }
+
+def fast_filler(number_of_words=200) -> str:
+    """Generates filler text quickly using a cached dictionary."""
     fname = "dict_cache.json"
     if os.path.exists(fname):
         with open(fname, 'r') as file:
@@ -283,16 +295,19 @@ def fast_filler(number_of_words=200) -> str:
         wd = make_filler_text_dictionary()
         with open(fname, 'w') as file:
             json.dump(wd, file)
-    words = []
     
+    words = []
     for _ in range(number_of_words):
         length = random.randint(3, 7)  
-        if length in wd and wd[length]:  
+        if length in wd and wd[length]: 
             word = random.choice(wd[length])  
             words.append(word)
     paragraph = " ".join(words).capitalize() + "."
-
+    
     return paragraph
+
+
+print(fast_filler())
 
 
 if __name__ == "__main__":
