@@ -28,7 +28,7 @@ def password_please() -> str:
 
 def list_please() -> list[Any]:
     """Returns a list, you can put anything in the list."""
-    return list[12, 15.0, 19]
+    return [1, "Jw", True, 1998, None]
 
 
 def int_list_please() -> list[int]:
@@ -49,13 +49,13 @@ def dictionary_please() -> dict:
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = None
+    well_is_it = some_number == 5
     return well_is_it
 
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return None
+    return some_number - 5
 
 
 def greet(name="Towering Timmy") -> str:
@@ -64,7 +64,7 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    return None
+    return f"Well hello, {name}"
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
@@ -72,7 +72,7 @@ def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 2
     """
-    count = None
+    count = input_list.count(1)
 
     return count
 
@@ -81,7 +81,7 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
+    count = input_list.count(search_for_this)
 
     return count
 
@@ -105,7 +105,15 @@ def fizz_buzz() -> list:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    # your code here
+    for i in range(1, 101):
+        if i % 3 == 0 and i % 5 == 0:
+            fizz_buzz_list.append('FizzBuzz')
+        elif i % 3 == 0:
+            fizz_buzz_list.append('Fizz')
+        elif i % 5 == 0:
+            fizz_buzz_list.append('Buzz')
+        else:
+            fizz_buzz_list.append(i)
 
     return fizz_buzz_list
 
@@ -121,8 +129,10 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
-
-    return None
+    upper_string = input_string.upper()
+    interleaved_string = '🔥'.join(upper_string)
+    result = f"🔥{interleaved_string}🔥"
+    return result
 
 
 def the_chain_gang_5(the_value) -> bool:
@@ -135,8 +145,19 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that returns True if the value is 5
     TIP: you've already written a function that subtracts 5
     """
+def is_it_5(some_number) -> bool:
+    """Returns True if the argument passed is 5, otherwise returns False."""
+    return some_number == 5
 
-    return None
+def take_five(some_number) -> int:
+    """Subtracts 5 from some_number and returns the result."""
+    return some_number - 5
+
+def the_chain_gang_5(the_value) -> bool:
+    """Take the_value, subtract 5 from it, and return True if the value we end up with is 5."""
+    result = take_five(the_value)
+    return is_it_5(result)
+   
 
 
 def pet_filter(letter="a") -> list:
@@ -153,7 +174,7 @@ def pet_filter(letter="a") -> list:
         "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"
     ]
     # fmt: on
-    filtered = []
+    filtered = [pet for pet in pets if letter in pet]
 
     return filtered
 
@@ -170,6 +191,13 @@ def best_letter_for_pets() -> str:
 
     the_alphabet = string.ascii_lowercase
     most_popular_letter = ""
+    max_count = 0
+
+    for letter in the_alphabet:
+        pet_list = pet_filter(letter)
+        if len(pet_list) > max_count:
+            max_count = len(pet_list)
+            most_popular_letter = letter
 
     return most_popular_letter
 
@@ -201,6 +229,10 @@ def make_filler_text_dictionary() -> dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
+    for length in range(3, 8):  
+        response = requests.get(url + str(length))
+        words = response.text.split()  
+        wd[length] = words[:4]  
 
     return wd
 
@@ -219,6 +251,11 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+    for _ in range(number_of_words):
+        length = random.randint(3, 7)  
+        if my_dict[length]:  
+            word = random.choice(my_dict[length])  
+            words.append(word)
 
     return " ".join(words)
 
@@ -240,8 +277,24 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
+    if os.path.exists(fname):
+        with open(fname, 'r') as file:
+            wd = json.load(file)
+            wd = {int(k): v for k, v in wd.items()}
+    else:
+        wd = make_filler_text_dictionary()
+        with open(fname, 'w') as file:
+            json.dump(wd, file)
+    words = []
+    
+    for _ in range(number_of_words):
+        length = random.randint(3, 7)  
+        if length in wd and wd[length]:  
+            word = random.choice(wd[length])  
+            words.append(word)
+    paragraph = " ".join(words).capitalize() + "."
 
-    return None
+    return paragraph
 
 
 if __name__ == "__main__":
