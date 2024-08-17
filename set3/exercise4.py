@@ -35,9 +35,9 @@ def binary_search(low, high, actual_number):
         else:
             high = guess - 1
 
-    return {"guess": guess, "tries": tries}
+    return {"guess": None, "tries": tries}
     result = binary_search(1, 100, 42)
-    print(result)  # Expected output: {'guess': 42, 'tries': some_number}
+    print(result)  
 
 if __name__ == "__main__":
     print(binary_search(1, 100, 5))
