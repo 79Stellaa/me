@@ -8,3 +8,5 @@ The index starts at 0, so row 1 is actually the data of row 2.
 
 Number of rows：4698
 
+"CLUE, "short for Census of Land Use and Employment, is a tool used to collect and analyze data on land use and employment. The CLUE data covers a number of Small Areas in Melbourne, which are used to analyse land use types, economic activity and employment in different areas in detail.
+
